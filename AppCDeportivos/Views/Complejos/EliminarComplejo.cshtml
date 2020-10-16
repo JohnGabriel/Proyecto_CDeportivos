@@ -1,0 +1,50 @@
+﻿@model AppCDeportivos.Models.ComplejoModel
+
+@{
+    ViewBag.Title = "Eliminar Complejo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Seguro que desea eliminar complejo?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComplejoID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ComplejoID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreComplejo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombreComplejo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Localizacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Localizacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AreaTotal)
+        </dd>
+
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+            @Html.ActionLink("Listado Complejos", "Complejos")
+        </div>
+    }
+</div>
+
+

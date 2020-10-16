@@ -1,0 +1,63 @@
+﻿@model IEnumerable<AppCDeportivos.Models.ComplejoModel>
+@{
+    ViewBag.Title = "Sedes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Complejos Deportivos</h2>
+<p>
+    @Html.ActionLink("Nuevo Complejo", "CrearComplejo", "Complejos")
+</p>
+<table class="table  table-hover table-inverse">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreComplejo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreTipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Localizacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AreaTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreSede)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreComplejo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreTipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Localizacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AreaTotal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreSede)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditarComplejo", new { id = item.ComplejoID }) |
+                    @*@Html.ActionLink("Details", "Details", new { id = item.SedeID }) |*@
+                    @Html.ActionLink("Delete", "EliminarComplejo", new { id = item.ComplejoID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+

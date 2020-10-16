@@ -1,0 +1,50 @@
+﻿@model IEnumerable<AppCDeportivos.Models.SedeModel>
+@{
+    ViewBag.Title = "Sedes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sedes Deportivas</h2>
+<p>
+    @Html.ActionLink("Nueva Sede","CrearSede", "Sedes")
+</p>
+<table class="table table-hover table-inverse">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreSede)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroComplejos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Presupuesto)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreSede)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroComplejos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Presupuesto)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditarSede", new { id = item.SedeID }) | 
+                    @*@Html.ActionLink("Details", "Details", new { id = item.SedeID }) |*@
+                    @Html.ActionLink("Delete", "EliminarSede", new { id = item.SedeID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

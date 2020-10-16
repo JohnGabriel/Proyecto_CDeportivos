@@ -1,0 +1,9 @@
+﻿@model IEnumerable<AppCDeportivos.Models.SedeModel>
+
+<select class="form-control" id="SedeID" name="SedeID">
+    @foreach (var item in Model)
+    {
+        <option value="@item.SedeID">@item.NombreSede</option>
+    }
+
+</select>

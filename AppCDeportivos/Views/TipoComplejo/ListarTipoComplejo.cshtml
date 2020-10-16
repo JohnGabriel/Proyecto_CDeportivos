@@ -1,0 +1,10 @@
+﻿@model IEnumerable<AppCDeportivos.Models.TipoComplejoModel> 
+
+<select class="form-control" id="TipoComplejoID" name="TipoComplejoID">
+    @foreach (var item in Model)
+    {
+        <option value="@item.TipoID">@item.NombreTipo</option>
+    }
+
+</select>
+
